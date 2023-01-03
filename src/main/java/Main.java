@@ -31,7 +31,7 @@ public class Main {
         int count = Integer.parseInt(parts[1]);
         basket.addPurchase(product, count);
       } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println("Введены не правильные данные!");
+        System.out.println("Не корректные данные!");
       }
 
     }
