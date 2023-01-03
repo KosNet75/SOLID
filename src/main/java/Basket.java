@@ -3,7 +3,7 @@ import java.util.Map;
 public class Basket {
 
 
-  protected Map<String, Integer> prices; //Мап для хранения названий и количества
+  protected Map<String, Integer> prices; //Map название и кол-во
   protected Purchase[] purchases; // купленные товары
 
   public Basket(Map<String, Integer> prices) {
@@ -27,11 +27,10 @@ public class Basket {
   public long sum() {
     long sum = 0;
     System.out.println("КОРЗИНА:");
-    for (int i = 0; i < purchases.length; i++) {
-      Purchase purchase = purchases[i];
-        if (purchase == null) {
-            continue;
-        }
+    for (Purchase purchase : purchases) {
+      if (purchase == null) {
+        continue;
+      }
       System.out.println(
           "\t" + purchase.title + " " + purchase.count + " шт. в сумме " + (purchase.count
               * prices.get(purchase.title)) + " руб.");
